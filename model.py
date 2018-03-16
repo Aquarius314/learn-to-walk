@@ -24,7 +24,7 @@ class Model:
 
     dead = False
 
-    radius = 8
+    radius = 6
     height = 100
 
     left_leg_length = 50
@@ -68,7 +68,7 @@ class Model:
             return
         self.display_leg(self.get_left_leg_point(), screen)
         self.display_leg(self.get_right_leg_point(), screen)
-        pygame.draw.circle(screen, MODEL_COLOR, (int(self.head_x), int(self.head_y)), self.radius)
+        pygame.draw.circle(screen, MODEL_COLOR, (int(self.head_x), int(self.head_y)), self.radius+2)
         self.display_distance(screen)
 
     def display_distance(self, screen):
@@ -87,8 +87,8 @@ class Model:
     def display_leg(self, leg, screen):
         x, y = leg
         pygame.draw.line(screen, LEG_COLOR, (leg), (int(self.head_x), int(self.head_y)), 3)
-        pygame.draw.polygon(screen, MODEL_COLOR, ([(x, y), (x-5, y+self.radius), (x+5, y+self.radius)]))
-        # pygame.draw.circle(screen, MODEL_COLOR, (leg), self.radius)
+        # pygame.draw.polygon(screen, MODEL_COLOR, ([(x, y), (x-5, y+self.radius), (x+5, y+self.radius)]))
+        pygame.draw.circle(screen, MODEL_COLOR, (leg), self.radius)
 
     def move(self, g_line):
         if self.dead:

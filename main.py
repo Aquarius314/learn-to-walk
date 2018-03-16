@@ -18,10 +18,10 @@ alg = Algorithm()
 gui = Gui()
 world = World(width, height)
 while running:
+    running = alg.calculate(world)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    alg.calculate(world)
     gui.display(screen)
     world.display_world(screen)
 
