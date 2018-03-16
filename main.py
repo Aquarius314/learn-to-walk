@@ -6,7 +6,7 @@ from world import World
 
 print("Starting")
 
-(width, height) = (500, 500)
+(width, height) = (1500, 500)
 
 screen = pygame.display.set_mode((width, height))
 # pygame.display.flip()
